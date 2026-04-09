@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhos - Inovação Digital</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fc;
+            --white: #ffffff;
+            --primary-purple: #6e5ce6;
+            --text-main: #1e272e;
+            --text-secondary: #636e72;
+            --accent-bg: #f0f2ff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --border-radius: 24px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container { width: 100%; max-width: 900px; }
+        
+        .back-link { 
+            text-decoration: none; 
+            color: var(--text-secondary); 
+            font-size: 0.9rem; 
+            margin-bottom: 20px; 
+            display: block; 
+        }
+
+        header { margin-bottom: 40px; }
+        h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
+
+        /* Estilo dos Cards de Trabalho */
+        .assignment-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            color: #b2bec3;
+            margin-bottom: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .deadline-tag {
+            color: #e74c3c; /* Vermelho suave para prazos */
+            font-size: 0.75rem;
+        }
+
+        h2 { margin: 0 0 15px 0; font-size: 1.6rem; }
+
+        .assignment-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Área de Documentos */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+        }
+
+        .resource-link {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: var(--accent-bg);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--primary-purple);
+            font-weight: 600;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .resource-link:hover {
+            background: #e5e8ff;
+            border-color: var(--primary-purple);
+        }
+
+        .icon { font-size: 1.2rem; margin-right: 12px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="narrativasvisuais.html" class="back-link">← Voltar ao Portal</a>
+
+        <header>
+            <h1>Trabalhos Académicos</h1>
+            <p style="color: var(--text-secondary);">Consulte os enunciados e os materiais de apoio para a submissão dos seus projetos.</p>
+        </header>
+
+        <article class="assignment-card">
+            <div class="section-title">
+                <span>Trabalho Prático 01</span>
+                <span class="deadline-tag">Prazo: 15 de Abril, 2026</span>
+            </div>
+            <h2>Interactive Visual Narrative II Assignments </h2>
+            <p class="assignment-description">
+                Todos os trabalhos devem de ser entregues na data especificada. All the assigments should be handle in the dates that are showcased in the document.
+            </p>
+
+            <div class="docs-grid">
+                <a href="ivnassignment1.pdf" class="resource-link">
+                    <span class="icon">📝</span>
+                    <span>1st Assignment</span>
+                </a>
+
+                <a href="ivnassignment2.pdf" class="resource-link">
+                    <span class="icon">📋</span>
+                    <span>2nd Assignment</span>
+                </a>
+
+                <a href="ivnassignment3.pdf" class="resource-link">
+                    <span class="icon">📄</span>
+                    <span>Final Assignment</span>
+                </a>
+            </div>
+      
+
+    </div>
+
+</body>
+</html>
