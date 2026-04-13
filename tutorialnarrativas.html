@@ -28,11 +28,9 @@
         .container { width: 100%; max-width: 900px; }
         .back-link { text-decoration: none; color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; display: block; }
 
-        /* Estilo do Cabeçalho igual à imagem */
         header { margin-bottom: 40px; }
         h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
         
-        /* BOTÕES DE SELEÇÃO (TABS) */
         .tabs-container {
             display: flex;
             gap: 15px;
@@ -45,7 +43,7 @@
             border: none;
             background-color: var(--white);
             color: var(--text-secondary);
-            border-radius: 50px; /* Estilo pílula, muito moderno */
+            border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
             box-shadow: var(--shadow);
@@ -57,7 +55,6 @@
             color: var(--white);
         }
 
-        /* CONTEÚDO DOS TUTORIAIS */
         .tutorial-content { display: none; animation: fadeIn 0.5s; }
         .tutorial-content.active { display: block; }
 
@@ -111,41 +108,35 @@
 
         <header>
             <h1>Materiais de Apoio</h1>
-            <p style="color: var(--text-secondary);"></p>
         </header>
 
         <div class="tabs-container">
-            <button class="tab-button active" onclick="openTutorial(event, 'tutorial1')">Twine</button>
-            <button class="tab-button" onclick="openTutorial(event, 'tutorial2')">Figma</button>
-            </div>
+            <button class="tab-button active" onclick="openTutorial(event, 'tutorial1')">MetaStep</button>
+            <button class="tab-button" onclick="openTutorial(event, 'tutorial2')">Delightex</button>
+            <button class="tab-button" onclick="openTutorial(event, 'tutorial3')">Twine</button>
+            <button class="tab-button" onclick="openTutorial(event, 'tutorial4')">Figma</button>
+        </div>
 
-           <div id="tutorial1" class="tutorial-content active">
+        <div id="tutorial1" class="tutorial-content active">
             <div class="content-card">
                 <p class="section-title">MetaStep</p>
-                 <a href="metastep.pdf" class="resource-link"> Baixar Tutorial MetaStep (pdf)</a>
-                </a>
-   
-</div>
-                <div id="tutorial2" class="tutorial-content active">
+                <a href="metastep.pdf" class="resource-link">Baixar Tutorial MetaStep (pdf)</a>
+            </div>
+        </div>
+
+        <div id="tutorial2" class="tutorial-content">
             <div class="content-card">
                 <p class="section-title">Delightex</p>
-                 <a href="delightex2.pdf" class="resource-link"> Baixar Tutorial Delightex (pdf)</a>
-                </a>
-   
-</div>
+                <a href="delightex2.pdf" class="resource-link">Baixar Tutorial Delightex (pdf)</a>
+            </div>
+        </div>
 
-        <div id="tutorial3" class="tutorial-content active">
+        <div id="tutorial3" class="tutorial-content">
             <div class="content-card">
                 <p class="section-title">Twine</p>
-                <a href="twineiniciante.pdf" class="resource-link"> Baixar Tutorial para Iniciante Twine (pdf)</a>
-                </a>
-                  <a href="twinehandbook.pdf.pdf" class="resource-link"> Baixar Tutorial para Iniciante Twine (pdf)</a>
-                </a>
-
-        <a href="englishtutorial.pdf" class="resource-link" style="margin-top: 10px;">
-            <span></span>
-            <span style="margin-left: 10px;">Download Tutorial for Twine Begginers Users (PDF)</span>
-        </a>
+                <a href="twineiniciante.pdf" class="resource-link">Baixar Tutorial para Iniciante Twine (pdf)</a>
+                <a href="twinehandbook.pdf" class="resource-link">Baixar Handbook Twine (pdf)</a>
+                <a href="englishtutorial.pdf" class="resource-link">Download Tutorial for Twine Beginners (PDF)</a>
             </div>
         </div>
 
@@ -154,21 +145,12 @@
                 <p class="section-title">Figma</p>
                 <div class="video-box">
                     <video width="100%" height="100%" controls style="border-radius: 15px;">
-        <source src="Figma.mp4" type="video/mp4">
-        <div style="padding: 40px; text-align: center; background: var(--accent-bg); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <p style="color: var(--text-secondary);">O seu navegador não consegue reproduzir este vídeo diretamente.</p>
-            <a href="Figma.mp4" target="_blank" class="resource-link" style="background: var(--primary-purple); color: white;">
-                ▶️ Clique aqui para abrir o vídeo em tela cheia
-              </a>
-        </div>
-    </video>
-</div>
-
+                        <source src="Figma.mp4" type="video/mp4">
+                        <p>Seu navegador não suporta vídeos.</p>
+                    </video>
+                </div>
                 <a href="figma.pdf" class="resource-link">📥 Baixar o Tutorial: Figma para iniciantes</a>
-                <a href="figmablueprint.pdf" class="resource-link" style="margin-top: 10px;">
-            <span></span>
-            <span style="margin-left: 10px;">Blue print do programa Figma</span>
-        </a>
+                <a href="figmablueprint.pdf" class="resource-link">Blue print do programa Figma</a>
             </div>
         </div>
 
@@ -178,19 +160,16 @@
         function openTutorial(evt, tutorialName) {
             var i, content, tabs;
             
-            // Esconde todos os conteúdos
             content = document.getElementsByClassName("tutorial-content");
             for (i = 0; i < content.length; i++) {
                 content[i].classList.remove("active");
             }
 
-            // Remove a classe "active" de todos os botões
             tabs = document.getElementsByClassName("tab-button");
             for (i = 0; i < tabs.length; i++) {
                 tabs[i].classList.remove("active");
             }
 
-            // Mostra o conteúdo atual e adiciona classe ativa ao botão
             document.getElementById(tutorialName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
